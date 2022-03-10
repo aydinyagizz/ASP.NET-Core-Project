@@ -17,13 +17,5 @@ namespace MvcWebUI.Controllers
             _categoryService = categoryService;
         }
 
-        public IActionResult Index()
-        {
-            var model = new CategoryListViewModel
-            {
-                Categories = _categoryService.GetAll()
-            };
-            return View(model);
-        }
     }
 }

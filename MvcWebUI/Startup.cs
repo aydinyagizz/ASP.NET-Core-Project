@@ -12,6 +12,8 @@ using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using Microsoft.AspNetCore.Http;
+using MvcWebUI.Helpers;
 
 namespace MvcWebUI
 {
@@ -30,8 +32,16 @@ namespace MvcWebUI
             
             services.AddSingleton<IProductService, ProductManager>();
             services.AddSingleton<IProductDal, EfProductDal>();
+
             services.AddSingleton<ICategoryService, CategoryManager>();
             services.AddSingleton<ICategoryDal, EfCategoryDal>();
+
+            //sepet olduðu için AddScoped vermemiz gerek aksi halde bir kullanýcý sepete ürün eklediðinde bütün kullanýcýlarda da eklenir.
+            services.AddScoped<ICartService, CartManager>();
+            services.AddScoped<ICartSessionHelper, CartSessionHelper>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSession();
+
             services.AddControllersWithViews();
         }
 
@@ -52,6 +62,9 @@ namespace MvcWebUI
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            //session middleware'yi ekliyoruz.
+            app.UseSession();
 
             app.UseAuthorization();
 

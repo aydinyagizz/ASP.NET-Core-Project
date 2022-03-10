@@ -25,4 +25,8 @@
     <UpToDateCheckInput Remove="Views\Category\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Category\" />
+  </ItemGroup>
+
 </Project>
