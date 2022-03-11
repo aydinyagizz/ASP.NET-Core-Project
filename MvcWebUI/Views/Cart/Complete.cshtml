@@ -7,31 +7,37 @@
     <div class="form-group">
         <label asp-for="ShippingDetail.FirstName">Ad</label>
         <input asp-for="ShippingDetail.FirstName" class="form-control" placeholder="Müşteri Adı" />
+        <span asp-validation-for="ShippingDetail.FirstName"></span> @* Hata mesajlarınının gösterimi  *@
     </div>
 
     <div class="form-group">
         <label asp-for="ShippingDetail.LastName">Soyad</label>
         <input asp-for="ShippingDetail.LastName" class="form-control" placeholder="Müşteri Soyadı" />
+        <span asp-validation-for="ShippingDetail.LastName"></span> @* Hata mesajlarınının gösterimi  *@
     </div>
 
     <div class="form-group">
         <label asp-for="ShippingDetail.Email">E-posta</label>
         <input asp-for="ShippingDetail.Email" class="form-control" placeholder="E-posta" />
+        <span asp-validation-for="ShippingDetail.Email"></span> @* Hata mesajlarınının gösterimi  *@
     </div>
 
     <div class="form-group">
         <label asp-for="ShippingDetail.Age">Yaş</label>
         <input asp-for="ShippingDetail.Age" class="form-control" placeholder="Müşteri Yaşı" />
+        <span asp-validation-for="ShippingDetail.Age"></span> @* Hata mesajlarınının gösterimi  *@
     </div>
 
     <div class="form-group">
         <label asp-for="ShippingDetail.City">Şehir</label>
         <input asp-for="ShippingDetail.City" class="form-control" placeholder="Şehir" />
+        <span asp-validation-for="ShippingDetail.City"></span> @* Hata mesajlarınının gösterimi  *@
     </div>
 
     <div class="form-group">
         <label asp-for="ShippingDetail.Address">Adres</label>
         <input asp-for="ShippingDetail.Address" class="form-control" placeholder="Müşteri Adresi" />
+        <span asp-validation-for="ShippingDetail.Address"></span> @* Hata mesajlarınının gösterimi  *@
     </div>
 
     <input type="submit" value="Kaydet" class="btn btn-primary btn-sm" />

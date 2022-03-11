@@ -88,6 +88,11 @@ namespace MvcWebUI.Controllers
         [HttpPost]
         public IActionResult Complete(ShippingDetail shippingDetail)
         {
+            // model geçerli mi değil mi kontrolü
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
             TempData.Add("message", "Siparişiniz başarıyla tamamlandı.");
 
             //sepeti temizliyoruz.
