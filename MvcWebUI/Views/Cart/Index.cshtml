@@ -39,4 +39,15 @@ else
             </tbody>
         }
     </table>
+
+    @if (Model.Cart.CartLines.Count == 0)
+    {
+
+    }
+    else
+    {
+        <div>
+            <a type="submit" class="btn btn-primary btn-sm" asp-controller="Cart" asp-action="Complete">Siparişi Tamamla</a>
+        </div>
+    }
 }

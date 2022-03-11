@@ -27,7 +27,7 @@ namespace MvcWebUI.Models
 
 
         //[Required(ErrorMessage = "Yaş alanı boş bırakılamaz.")]
-        //[Range(18,65, ErrorMessage = "Yaş aralığı 18 ile 65 arasındadır.")] //hangi sayı aralığında sayı girebilir onu söylüyoruz.
+        [Range(18,65, ErrorMessage = "Yaş aralığı 18 ile 65 arasındadır.")] //hangi sayı aralığında sayı girebilir onu söylüyoruz.
         public int Age { get; set; }
     }
 }
